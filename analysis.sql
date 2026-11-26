@@ -110,3 +110,9 @@ WHERE v.view_id IS NULL;
 SELECT full_name, monthly_price
 FROM users
 WHERE monthly_price > (SELECT AVG(monthly_price) FROM users);
+
+-- Q16. Churn rate by plan.
+SELECT plan,
+       ROUND(100.0 * SUM(CASE WHEN is_active = 0 THEN 1 ELSE 0 END) / COUNT(*), 1) AS churn_pct
+FROM users
+GROUP BY plan;
