@@ -54,3 +54,12 @@ SELECT device, AVG(minutes_watched) AS average_minutes
 FROM views
 GROUP BY device
 ORDER BY average_minutes DESC;
+
+
+-- Section C: JOINs
+
+-- Q9. Each view shown with the user's name and the show's title.
+SELECT u.full_name, s.title, v.minutes_watched
+FROM views v
+JOIN users u ON v.user_id = u.user_id
+JOIN shows s ON v.show_id = s.show_id;
