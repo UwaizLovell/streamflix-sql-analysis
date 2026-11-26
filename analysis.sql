@@ -116,3 +116,9 @@ SELECT plan,
        ROUND(100.0 * SUM(CASE WHEN is_active = 0 THEN 1 ELSE 0 END) / COUNT(*), 1) AS churn_pct
 FROM users
 GROUP BY plan;
+
+
+-- Q17. Count users per country, treating both South Africa spellings as one.
+SELECT LOWER(country) AS country, COUNT(*) AS total_users
+FROM users
+GROUP BY LOWER(country);
