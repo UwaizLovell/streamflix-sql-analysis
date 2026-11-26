@@ -33,3 +33,10 @@ FROM shows;
 SELECT plan, COUNT(*) AS total_users
 FROM users
 GROUP BY plan;
+
+
+-- Q6. Average rating per genre, ordered best to worst.
+SELECT genre, AVG(rating) AS average_rating
+FROM shows
+GROUP BY genre
+ORDER BY average_rating DESC;
