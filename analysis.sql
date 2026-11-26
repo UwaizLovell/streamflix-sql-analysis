@@ -97,3 +97,10 @@ JOIN users u ON v.user_id = u.user_id
 GROUP BY u.full_name
 ORDER BY total_minutes DESC
 LIMIT 3;
+
+
+-- Q14. Users who have never watched anything.
+SELECT u.full_name
+FROM users u
+LEFT JOIN views v ON u.user_id = v.user_id
+WHERE v.view_id IS NULL;
