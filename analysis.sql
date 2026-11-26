@@ -80,3 +80,11 @@ JOIN shows s ON v.show_id = s.show_id
 GROUP BY s.title
 ORDER BY total_plays DESC
 LIMIT 1;
+
+
+-- Q12. Number of views per plan.
+SELECT u.plan, COUNT(*) AS total_views
+FROM views v
+JOIN users u ON v.user_id = u.user_id
+GROUP BY u.plan
+ORDER BY total_views DESC;
