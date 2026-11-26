@@ -71,3 +71,12 @@ FROM views v
 JOIN shows s ON v.show_id = s.show_id
 GROUP BY s.genre
 ORDER BY total_minutes DESC;
+
+
+-- Q11. The single most-watched show by number of plays.
+SELECT s.title, COUNT(*) AS total_plays
+FROM views v
+JOIN shows s ON v.show_id = s.show_id
+GROUP BY s.title
+ORDER BY total_plays DESC
+LIMIT 1;
