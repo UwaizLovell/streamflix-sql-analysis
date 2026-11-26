@@ -132,3 +132,11 @@ SELECT title,
            ELSE 'Not rated yet'
        END AS rating_category
 FROM shows;
+
+
+-- Q19. Monthly revenue from active users per plan.
+SELECT plan,
+       SUM(CASE WHEN is_active = 1 THEN monthly_price ELSE 0 END) AS monthly_revenue
+FROM users
+GROUP BY plan
+ORDER BY monthly_revenue DESC;
