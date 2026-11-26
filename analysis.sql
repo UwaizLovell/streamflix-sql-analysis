@@ -47,3 +47,10 @@ SELECT genre, COUNT(*) AS total_shows
 FROM shows
 GROUP BY genre
 HAVING COUNT(*) > 2;
+
+
+-- Q8. Average minutes watched per device, highest first.
+SELECT device, AVG(minutes_watched) AS average_minutes
+FROM views
+GROUP BY device
+ORDER BY average_minutes DESC;
