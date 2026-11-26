@@ -88,3 +88,12 @@ FROM views v
 JOIN users u ON v.user_id = u.user_id
 GROUP BY u.plan
 ORDER BY total_views DESC;
+
+
+-- Q13. Top 3 most-engaged users by total minutes watched.
+SELECT u.full_name, SUM(v.minutes_watched) AS total_minutes
+FROM views v
+JOIN users u ON v.user_id = u.user_id
+GROUP BY u.full_name
+ORDER BY total_minutes DESC
+LIMIT 3;
