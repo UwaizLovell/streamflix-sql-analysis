@@ -104,3 +104,9 @@ SELECT u.full_name
 FROM users u
 LEFT JOIN views v ON u.user_id = v.user_id
 WHERE v.view_id IS NULL;
+
+
+-- Q15. Users who pay more than the average monthly price.
+SELECT full_name, monthly_price
+FROM users
+WHERE monthly_price > (SELECT AVG(monthly_price) FROM users);
