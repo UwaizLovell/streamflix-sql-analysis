@@ -40,3 +40,10 @@ SELECT genre, AVG(rating) AS average_rating
 FROM shows
 GROUP BY genre
 ORDER BY average_rating DESC;
+
+
+-- Q7. Only the genres that have more than 2 shows.
+SELECT genre, COUNT(*) AS total_shows
+FROM shows
+GROUP BY genre
+HAVING COUNT(*) > 2;
