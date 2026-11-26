@@ -14,3 +14,8 @@ SELECT full_name
 FROM users
 WHERE age IS NULL;
 
+
+-- Q3. StreamFlix's total monthly revenue from active users.
+SELECT SUM(monthly_price) AS total_monthly_revenue
+FROM users
+WHERE is_active = 1;
