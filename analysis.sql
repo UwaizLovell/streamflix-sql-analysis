@@ -25,3 +25,11 @@ WHERE is_active = 1;
 -- 1 show was skipped because its rating is NULL.
 SELECT AVG(rating) AS average_show_rating
 FROM shows;
+
+
+-- Section B: Grouping & filtering groups
+
+-- Q5. Number of users on each plan.
+SELECT plan, COUNT(*) AS total_users
+FROM users
+GROUP BY plan;
