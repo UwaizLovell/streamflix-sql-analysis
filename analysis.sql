@@ -122,3 +122,13 @@ GROUP BY plan;
 SELECT LOWER(country) AS country, COUNT(*) AS total_users
 FROM users
 GROUP BY LOWER(country);
+
+
+-- Q18. Label each show according to its rating.
+SELECT title,
+       CASE
+           WHEN rating >= 8 THEN 'Highly rated'
+           WHEN rating < 8 THEN 'Average'
+           ELSE 'Not rated yet'
+       END AS rating_category
+FROM shows;
