@@ -63,3 +63,11 @@ SELECT u.full_name, s.title, v.minutes_watched
 FROM views v
 JOIN users u ON v.user_id = u.user_id
 JOIN shows s ON v.show_id = s.show_id;
+
+
+-- Q10. Total minutes watched per genre.
+SELECT s.genre, SUM(v.minutes_watched) AS total_minutes
+FROM views v
+JOIN shows s ON v.show_id = s.show_id
+GROUP BY s.genre
+ORDER BY total_minutes DESC;
