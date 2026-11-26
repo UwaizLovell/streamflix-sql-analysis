@@ -19,3 +19,9 @@ WHERE age IS NULL;
 SELECT SUM(monthly_price) AS total_monthly_revenue
 FROM users
 WHERE is_active = 1;
+
+
+-- Q4. Average show rating.
+-- 1 show was skipped because its rating is NULL.
+SELECT AVG(rating) AS average_show_rating
+FROM shows;
